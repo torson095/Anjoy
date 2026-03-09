@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siswa Berprestasi SMA Kita | Premiere Night</title>
+    <style>
+        /* === IMPORT FONT (Bebas Neue untuk Judul, Montserrat untuk teks) === */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap');
+
+        /* === VARIABEL WARNA MODERN & EYECATCHING === */
+        :root {
+            --bg-dark: #0a0a0a; /* Hitam Pekat */
+            --bg-card: #161616; /* Abu-abu sangat gelap untuk kartu */
+            --accent-neon: #00f2fe; /* Cyan Neon */
+            --accent-warm: #4facfe; /* Biru Neon */
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --font-poster: 'Bebas Neue', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        /* === HEADER: Judul ala Premiere Film === */
+        header {
+            text-align: center;
+            padding: 6rem 1.5rem 3rem;
+        }
+
+        header h1 {
+            font-family: var(--font-poster);
+            font-size: 5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            line-height: 1;
+            color: Black !important;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: var(--accent-neon);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: black !important;
+        }
+
+        /* === MAIN CONTENT: Gallery Area === */
+        .poster-gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            /* Grid dinamis, poster agak ramping (rasio bioskop) */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        /* === THE POSTER CARD === */
+        .poster-card {
+            background-color: var(--bg-card);
+            border-radius: 25px; /* Sudut tajam khas poster */
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid #222;
+            cursor: pointer;
+        }
+
+        /* Efek Glow & Angkat saat Hover */
+        .poster-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.15);
+            border-color: var(--accent-warm);
+        }
+
+        /* Container Gambar (untuk efek zoom) */
+        .poster-img-wrapper {
+            width: 100%;
+            height: 320px; /* Rasio tinggi khas poster film */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .poster-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: grayscale(20%) contrast(110%); /* Sedikit dramatic filter */
+        }
+
+        /* Overlay Gradasi Warna saat Hover */
+        .poster-img-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0) 50%, rgba(79, 172, 254, 0.2) 100%);
+            opacity: 0.7;
+            transition: opacity 0.5s;
+        }
+
+        .poster-card:hover .poster-img-wrapper::after {
+            opacity: 1;
+        }
+
+        .poster-card:hover img {
+            transform: scale(1.1); /* Zoom pelan */
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        /* Label Kategori di Atas Foto */
+        .poster-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            z-index: 10;
+        }
+        
+        .gold {
+            border: 1px solid gold;
+            color: gold;
+            box-shadow: 0 0 5px gold 100%;
+        }
+        
+        .silver {
+            border: 1px solid silver;
+            color: silver;
+            box-shadow: 0 0 5px silver;
+        }
+        
+        .perunggu {
+            border: 1px solid peru;
+            color: peru;
+            box-shadow: 0 0 5px peru;
+        }
+
+        /* === INFO SECTION (Bawah Poster) === */
+        .poster-info {
+            padding: 1.5rem;
+            background-color: var(--bg-card);
+            position: relative;
+            z-index: 10;
+        }
+
+        .poster-info h2 {
+            font-family: var(--font-poster);
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 0.2rem;
+            line-height: 1;
+        }
+
+        .poster-info .sub-title {
+            font-size: 0.8rem;
+            color: var(--accent-warm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .poster-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            height: 60px; /* Membatasi tinggi teks jurnal */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        /* === BUTTON CTA (Tombol Aksi) === */
+        .btn-cinema {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            background: transparent;
+            border: 2px solid var(--text-main);
+            color: var(--text-main);
+            padding: 12px;
+            font-family: var(--font-poster);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cinema::before {
+            content: 'READ JOURNAL'; /* Teks saat hover */
+            position: absolute;
+            inset: 0;
+            background-color: var(--text-main);
+            color: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .btn-cinema:hover {
+            border-color: var(--text-main);
+        }
+
+        .btn-cinema:hover::before {
+            transform: translateY(0);
+        }
+
+
+        /* === RESPONSIVE FIX === */
+        @media (max-width: 768px) {
+            header h1 { font-size: 3rem; }
+            .poster-gallery { gap: 1.5rem; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Gala Prestasi</h1>
+        <p></p>
+    </header>
+
+    <main class="poster-gallery">
+        
+        <article class="poster-card">
+            <div class="poster-category gold">Medali Emas</div>
+            <div class="poster-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?fit=crop&w=500&q=80" alt="Foto Siswa">
+            </div>
+            <div class="poster-info">
+                <h2>Alifia Rahmatia Putri</h2>
+                <span class="sub-title">A Journey of Logic</span>
+                <a href="#" class="btn-cinema">View Profile</a>
+            </div>
+        </article>
+
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e8f6ff;
+    color: #003178;
+}
+
+.GroupSwitch {
+    text-align: center;
+}
+
+
+.header {
+    text-align: center;
+    padding: 20px;
+    margin: 15vh 0 50px 0;
+}
+
+#tugas-sekbid {
+   font-size: 12px; 
+   padding: 0 20px;
+}
+
+.PengurusInti, .Sekbid1, .Sekbid2, .Sekbid3, .Sekbid4, .Sekbid5, .Sekbid6, .Sekbid7, .Sekbid8, .Sekbid9, .Sekbid10 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20vh;
+    padding: 50px;
+}
+
+.man {
+    background-image: url('man.webp');
+    background-size: cover;
+}
+
+.woman {
+    background-image: url('woman.webp');
+    background-size: cover;
+}
+
+
+.jabatan {
+    background-color: white;
+    border-radius: 15px;
+    aspect-ratio: 3/4;
+    box-shadow: 0 15px 15px rgba(138, 210, 255, 0.3);
+    transition: transform 300ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-left: 5%;
+    position: relative;
+    font-weight: 600;
+    color: white;
+    overflow: hidden;
+    font-size: 80%;
+    font-family: 'Poppins', sans-serif ;
+}
+
+.jabatan span {
+    color: #003178;
+    padding:  5% 0 4% 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    
+}
+
+.jabatan:active {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+.PengurusInti, .Sekbid1, .Sekbid2, .Sekbid3, .Sekbid4, .Sekbid5, .Sekbid6, .Sekbid7, .Sekbid8, .Sekbid9, .Sekbid10 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.man {
+    background-image: url('man.webp');
+    background-size: cover;
+}
+
+.woman {
+    background-image: url('woman.webp');
+    background-size: cover;
+}
+
+.jabatan {
+    background-color: white;
+    background-size: cover;
+    border-radius: clamp(6px, 10px, 30px);
+    aspect-ratio: 3/4;
+    box-shadow: 0 15px 15px rgba(138, 210, 255, 0.3);
+    transition: transform 300ms ease;
+}
+
+.jabatan:active {
+    transform: scale(1.1);
+}
+}
+
+#Wakil {
+    background-image: url('irfan.webp');
+    background-size: cover;
+}

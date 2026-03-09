@@ -1,0 +1,196 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110vh;
+            background: #e8f6ff;
+            padding: 20px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Container */
+        #HeaderForm {
+            font-size: 1.3em;
+            margin-bottom: 10px; 
+            color: #333;
+        }
+
+        .form-container {
+            background: white;
+            padding: 15px;
+            border-radius: 24px;
+            box-shadow: 0 15px 15px #8AD3FF;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        #Aspirasiku {
+            color: #03abff;
+            height: 10%;
+            width: 10%;
+            margin-bottom: 10px;
+            transform: scale(2);
+            transition: transform 200ms ;
+            padding: 5px 0 5px 0;
+        }
+        
+        #Aspirasiku:hover {
+            transform: rotate(30deg) scale(2.6);
+        }
+
+        /* Input Area */
+        textarea {
+            width: 100%;
+            height: 230px;
+            border: none;
+            font-size: 14px;
+            padding: 18px;
+            border-radius: 16px;
+            min-height: 160px;
+            background-color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px inset rgba(43, 75, 255, 0.2);
+            resize: vertical; 
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            height: 100%;
+            background: #03abff;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background: white;
+            color: #03abff;
+            border: 2px solid #03abff;
+            transform: scale(0.96);
+        }
+
+    
+        button:disabled {
+            background: white;
+            color: #03abff;
+            border: 2px solid #03abff;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .button-area {
+            height: 50px;
+            width: auto;
+            display: flex;
+            border-radius: 15px;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-top: 20px;
+        }
+        
+@media (min-width: 768px) {
+        
+        .form-container {
+            background: #03abff;
+            padding: 0;
+            display: flex;
+            position: relative;
+            border-radius: 24px;
+            box-shadow: 0 15px 15px #8AD3FF;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            text-align: center;
+        }
+    
+        /* Input Area */
+    textarea {
+        width: 100%;
+        height: 80%;
+        border: none;
+        font-size: 16px;
+        padding: 18px;
+        border-radius: 16px;
+        min-height: 160px;
+        background-color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 8px inset rgba(43, 75, 255, 0.2);
+        resize: vertical;
+        place-self: flex-start;
+        }
+
+    textarea:focus {
+        outline: none;
+        }
+        
+    textarea:focus .navbar-container {
+        display: none;
+    }
+    
+     /* Button */
+    .button-area {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    button {
+            width: 30%;
+            background: #03abff;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+    .logo {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 40%;
+        border-radius: 0 20px 20px 0;
+    }
+    #Aspirasiku {
+        transform: scale(4);
+        margin: 0;
+        padding: 0;
+        color: white;
+        
+        }
+        
+    #Aspirasiku:hover {
+        transform: rotate(20deg) scale(6);
+    }
+
+
+    #FormAspirasi {
+        width: 60%;
+        background: white;
+        padding: 20px;
+        border-radius: inherit;
+        }
+}

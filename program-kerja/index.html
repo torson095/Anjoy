@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+  
+   * {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+   body {
+    background: #e8f6ff;
+    margin: 0;
+    padding: 0;
+    color: #003178;
+
+}
+
+.header {
+    text-align: center;
+    margin: 15vh 0 50px 0;
+    padding: 20px;
+}
+   /*Tugas OSIS*/
+.proker-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 20vh;
+    padding: 20px;
+}
+
+.proker-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relatif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 300ms;
+    position: relative;
+    overflow: hidden;
+    place-self: flex-start;
+}
+
+.imgcontain {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 25px;
+  padding: 5px 10px;
+  color: white;
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+.ongoing { 
+  background: rgba(3, 171, 255); 
+}
+.completed { 
+  background: rgba(3, 200, 110);
+}
+.planned { 
+  background: rgba(239, 108, 0);
+}
+
+.proker-desc {
+  padding: 20px;
+  background: white;
+}
+
+.proker-desc h3 {
+  margin: 0;
+}
+
+.proker-desc p{
+  margin-bottom: 0;
+  font-size: .8rem;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  background: #03abff;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  margin-top: 20px;
+  transition: 200ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.button::before {
+  content:'Detail';
+}
+
+#detail4:checked~.button::before,
+#detail3:checked~.button::before,
+#detail2:checked~.button::before,
+#detail:checked~.button::before {
+  content: 'Tutup';
+}
+
+#detail4:checked ~.button, 
+#detail3:checked ~.button,
+#detail2:checked ~.button, 
+#detail:checked ~.button {
+  background: none;
+  border: 2px solid #03abff;
+  color: #03abff;
+}
+
+.proker-desc p {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  color: #636e72;
+  transition: max-height 300ms
+}
+
+#detail4:checked ~p, 
+#detail3:checked ~p,
+#detail2:checked ~p, 
+#detail:checked ~p  {
+  -webkit-line-clamp: none;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  
+    <header class="header">
+      <h1 style="margin: 0; padding: 0;"> Program Kerja</h1>
+      <p style="margin: 0; padding: 0;"> Tinjau dan Periksa Pelaksanaan Program Kerja Kami</p>
+    </header>
+    
+    
+<div class="proker-container">
+  <div class="proker-card">
+<div style="background-image: url('../image/aspirasiku.webp');" class="imgcontain">
+  <span class="status ongoing">Berjalan</span>
+  </div>
+  <div class="proker-desc">
+  <h3>Aspirasiku</h3>
+  <input style="display: none" type="checkbox" id="detail"/>
+    <p>Aspirasiku adalah wadah aspirasi digital berbasis website dengan sistem pesan anonim (tanpa identitas) yang terinspirasi dari aplikasi NGL. 
+        <br></br>
+    Aspirasiku merupakan inovasi yang berawal dari permasalahan siswa akan kesulitan untuk menyampaikan aspirasi secara langsung, serta ide untuk merancang sebuah media aspirasi yang dapat yang dapat diakses kapanpun dan dimanapun, supaya siswa dapat lebih mudah dalam memberikan aspirasi dan tidak terbatas akan waktu ataupun tempat.
+      <br></br>
+    Dengan Aspirasiku, siswa dapat menyampaikan aspirasi langsung secara real time yang dapat dilakukan kapanpun, dan dimanapun.
+  </p>
+  <label class="button" for="detail"></label>
+  </div>
+  </div>
+  
+  
+  
+  
+    <div class="proker-card">
+  <div style="background-image: url('../image/swanatalkz.webp');" class="imgcontain">
+  <span class="status planned">Rencana</span>
+  </div>
+  <div class="proker-desc">
+  <h3>SwanaTalkz</h3>
+  <input style="display: none" type="checkbox" id="detail2"/>
+  <p>
+SwanaTalkz adalah program acara milik OSIS dengan tipe konten wawancara ataupun podcast. 
+<br></br>
+SwanaTalkz bertujuan membantu meningkatkan atensi dari publik dan media massa kepada individu individu SMAN 1 Wanadadi yang berprestasi, unggul, dan inspiratif, lewat publikasi media digital yang mencakup ruang lingkup yang lebih luas. 
+    <br></br>
+SwanaTalkz akan mencakup wawancara dan podcast bulanan bersama narasumber dari SMAN 1 Wanadadi yang sedang meraih perhatian besar.
+  </p>
+  <label class="button" for="detail2"></label>
+  </div>
+  </div>
+  
+  <div class="proker-card">
+<div style="background-image: url('../image/dharma-yuddha.webp');" class="imgcontain">
+  <span class="status planned">Rencana</span>
+  </div>
+  <div class="proker-desc">
+  <h3>Dharma Yuddha</h3>
+  <input style="display: none" type="checkbox" id="detail3"/>
+    <p>Dharma Yuddha adalah program kompetisi antarkelas dengan variasi kompetisi yang lebih beragam.
+    <br></br>
+  Diambil dari kata "dharma" dan "yuddha" dalam bahasa sanskerta, yang memiliki arti pertarungan dan kebenaran. Sehingga memiliki makna pertarungan berdasarkan kebenaran.
+    <br></br>
+    Variasi kompetisi yang lebih banyak diharapkan dapat mendorong dan memaksimalkan potensi yang dimiliki oleh siswa, pada bidang bidang yang lebih spesifik.
+    <br></br>
+    Program ini direncanakan akan diterapkan pada classmeeting 2026 mendatang, namun masih berupa rencana mengingat waktu dan persetujuan izin yang masih perlu diusahakan.
+  </p>
+  <label class="button" for="detail3"></label>
+  </div>
+  </div>
+
+
+<div class="proker-card">
+<div style="background-image: url('../image/bumi-memanggil.webp');" class="imgcontain">
+  <span class="status planned">Rencana</span>
+  </div>
+  <div class="proker-desc">
+  <h3>Bumi Memanggil</h3>
+  <input style="display: none" type="checkbox" id="detail4"/>
+    <p>Bumi memanggil adalah program ambisius OSIS yaitu gerakan serentak 1 anak 1 pohon dengan tujuan utama yaitu membantu kawasan lahan kritis.
+            <br></br>
+        Program ini juga dirancang sebagai kampanye untuk meningkatkan kesadaran siswa akan pentingnya menjaga kelestarian alam dan sekitar, guna menghasilkan individu yang peduli terhadap lingkungan. 
+              <br></br>
+          Dalam program ini siswa diharuskan menyumbang 1 bibit pohon yang kemudian akan dikumpulkan dan dikirim langsung ke kawasan lahan kritis.
+  </p>
+  <label class="button" for="detail4"></label>
+  </div>
+  </div>
+  
+  
+  
+  
+  </div>
+  
+  <div style="position: absolute; top: 0; left: 0;" id="navbar-container"></div>
+<script src="../navbar.js"></script>
+
+</body>
+
+</html>
